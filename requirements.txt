@@ -1,0 +1,4 @@
+transformers 
+torch 
+docx2txt 
+gradio
