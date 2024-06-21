@@ -8,9 +8,9 @@ import time
 import docx2txt
 
 model_name_dict = {
-    "nllb-distilled-600M": "facebook/nllb-200-distilled-600M",
+    # "nllb-distilled-600M": "facebook/nllb-200-distilled-600M",
     "nllb-distilled-1.3B": "facebook/nllb-200-distilled-1.3B",
-    "nllb-3.3B": "facebook/nllb-200-3.3B",
+    # "nllb-3.3B": "facebook/nllb-200-3.3B",
 }
 
 
@@ -79,7 +79,7 @@ def translation(model_name, source, target, file=None, progress=gr.Progress()):
     n = 1
     for x in text.split("\n\n"):
         if x.strip() != "":
-            for text_chunk in x.split("."):
+            for text_chunk in x.split(". "):
                 text_chunk = text_chunk + "."
                 print(text_chunk)
                 translation = translator(text_chunk, max_length=512)[0][
